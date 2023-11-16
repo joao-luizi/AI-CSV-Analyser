@@ -1,0 +1,69 @@
+{% extends "_base.html" %} {% block content %}
+<div class="container container-table">
+  <table class="table table-striped table-responsive">
+    <thead>
+      <tr>
+        <th class="text-start">Filename</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for file in filelist %}
+      <tr>
+        <td class="text-start align-middle">{{file}}</td>
+        <td>
+          <form role="form-csv-delete" method="post" action="">
+            <input
+              class="form-control"
+              name="filename"
+              type="hidden"
+              value="{{file}}"
+            />
+            <div class="input-group-append">
+              <button
+                class="btn-delete"
+                value="csv-delete"
+                name="csv-delete"
+                type="submit"
+              >
+                <i class="fa fa-trash" aria-hidden="true"></i>
+              </button>
+            </div>
+          </form>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+<div class="container container-below">
+  <main class="form-signin w-100 m-auto">
+    <form role="form" method="post" action="" enctype="multipart/form-data">
+      {{ form.csrf_token }}
+      <h1 class="h3 mb-3 fw-normal text-center">Add File</h1>
+
+      <div class="form-floating">
+        {{ form.fileDescritpion(placeholder="Description", autocomplete="off",
+        class="form-control mb-2") }} {{ form.fileDescritpion.label }} {% if
+        form.fileDescritpion.errors %} {% for error in
+        form.fileDescritpion.errors %}
+        <div class="alert alert-danger" role="alert">{{ error }}</div>
+        {% endfor %} {% endif %}
+      </div>
+      <div class="form-floating">
+        {{ form.file() }} {% if form.file.errors %} {% for error in
+        form.file.errors %}
+        <div class="alert alert-danger" role="alert">{{ error }}</div>
+        {% endfor %} {% endif %}
+      </div>
+      <br />
+      <button class="w-100 btn btn-lg btn-primary" type="submit">Upload</button>
+      <!-- <p class="text-center mt-3">
+        Already registered?
+        <a href="{{ url_for('accounts.login') }}">Login now</a>
+      </p> -->
+    </form>
+  </main>
+</div>
+
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends "_base.html" %} {% block content %}
+<div class="container container-index">
+  <h1 class="text-left">Welcome {{current_user.email}}!</h1>
+  <h1 class="text-left">Available Actions:</h1>
+</div>
+<div class="container container-grid">
+  {%if current_user.is_admin %}
+  <div class="user-action">
+    <i class="fa-regular fa-user"></i>
+    <h3>Register Users</h3>
+    <a href="{{ url_for('accounts.register') }}" class="button-blue">Go</a>
+  </div>
+  <div class="user-action">
+    <i class="fa-solid fa-key"></i>
+    <h3>Register Keys</h3>
+    <a href="{{ url_for('accounts.register_keys') }}" class="button-blue">Go</a>
+  </div>
+  <div class="user-action">
+    <i class="fa-solid fa-unlock-keyhole"></i>
+    <h3>Assign Keys</h3>
+    <a href="{{ url_for('accounts.assign_keys') }}" class="button-blue">Go</a>
+  </div>
+  {%endif%}
+  <div class="user-action">
+    <i class="fa-solid fa-upload"></i>
+    <h3>Upload CSV</h3>
+    <a href="{{ url_for('pack_csv.upload_csv') }}" class="button-blue">Go</a>
+  </div>
+  <div class="user-action">
+    <i class="fa-solid fa-clipboard-question"></i>
+    <h3>Query CSV</h3>
+    <a href="{{ url_for('pack_csv.query_csv') }}" class="button-blue">Go</a>
+  </div>
+</div>
+{% endblock %}

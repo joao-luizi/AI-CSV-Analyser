@@ -1,0 +1,52 @@
+{% extends "_base.html" %} {% block content %}
+<div class="container container-below">
+  <main class="form-signin w-100 m-auto">
+    <form role="form" method="post" action="">
+      {{ form.csrf_token }}
+      <h1 class="h3 mb-3 fw-normal text-center">New Query</h1>
+      <div class="form-floating">
+        {{ form.selected_key(placeholder="Key", class="form-control mb-2") }} {{
+        form.selected_key.label }} {% if form.selected_key.errors %} {% for
+        error in form.selected_key.errors %}
+        <div class="alert alert-danger" role="alert">{{ error }}</div>
+        {% endfor %} {% endif %}
+      </div>
+      <div class="form-floating">
+        {{ form.selected_file(placeholder="CSV", class="form-control mb-2") }}
+        {{ form.selected_file.label }} {% if form.selected_file.errors %} {% for
+        error in form.selected_file.errors %}
+        <div class="alert alert-danger" role="alert">{{ error }}</div>
+        {% endfor %} {% endif %}
+      </div>
+
+      <div class="form-floating">
+        {{ form.query(placeholder="Query", autocomplete="off",
+        class="form-control mb-2") }} {{ form.query.label }} {% if
+        form.query.errors %} {% for error in form.query.errors %}
+        <div class="alert alert-danger" role="alert">{{ error }}</div>
+        {% endfor %} {% endif %}
+      </div>
+
+      <button class="w-100 btn btn-lg btn-primary" type="submit">
+        Run Query
+      </button>
+
+      <!-- <p class="text-center mt-3">
+        Already registered?
+        <a href="{{ url_for('accounts.login') }}">Login now</a>
+      </p> -->
+    </form>
+  </main>
+</div>
+<div class="container-reply">
+  <h4>Reply:</h4>
+</div>
+<div class="container-reply copy-text">
+  <div>
+    <p id="reply" scope="row">{{reply}}</p>
+  </div>
+  <button id="btn-copy-reply" class="hover-inactive">
+    <i class="fa fa-clone"> </i>
+  </button>
+</div>
+{% if reply %} {% endif %} {% endblock %}

@@ -1,0 +1,25 @@
+{% extends "_base.html" %} {% block content %}
+<div class="container container-below container-index">
+  <main class="form-assign w-100 m-auto">
+    <form role="form" method="post" action="">
+      {{ form.csrf_token }}
+      <div class="form-floating">
+        {{ form.id_user(placeholder="User", class="form-control mb-2") }} {{
+        form.id_user.label }} {% if form.id_user.errors %} {% for error in
+        form.id_user.errors %}
+        <div class="alert alert-danger" role="alert">{{ error }}</div>
+        {% endfor %} {% endif %}
+      </div>
+      <div class="form-floating">
+        {{ form.id_key(placeholder="Key", class="form-control mb-2") }} {{
+        form.id_key.label }} {% if form.id_key.errors %} {% for error in
+        form.id_key.errors %}
+        <div class="alert alert-danger" role="alert">{{ error }}</div>
+        {% endfor %} {% endif %}
+      </div>
+      <button class="w-100 btn btn-lg btn-primary" type="submit">Assign</button>
+    </form>
+  </main>
+</div>
+
+{% endblock %}

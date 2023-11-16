@@ -1,0 +1,74 @@
+{% extends "_base.html" %} {% block content %}
+<div class="container container-table">
+  <table class="table table-striped table-responsive">
+    <thead>
+      <tr>
+        <th class="text-start">Description</th>
+        <th class="text-start">Created on</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for key in keys %}
+      <tr>
+        <td class="text-start">{{key.key_description}}</td>
+        <td class="text-start">{{key.created_on}}</td>
+        <td>
+          <form role="form-delete" method="post" action="">
+            <input
+              class="form-control"
+              name="key-id"
+              type="hidden"
+              value="{{key.id}}"
+            />
+            <div class="input-group-append">
+              <button
+                class="btn-delete"
+                value="delete-key"
+                name="delete-key"
+                type="submit"
+              >
+                <i class="fa fa-trash" aria-hidden="true"></i>
+              </button>
+            </div>
+          </form>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+<div class="container container-below">
+  <main class="form-signin w-100 m-auto">
+    <form role="form" method="post" action="">
+      {{ form.csrf_token }}
+      <h1 class="h3 mb-3 fw-normal text-center">New User</h1>
+
+      <div class="form-floating">
+        {{ form.key_description(placeholder="description",autocomplete="off",
+        class="form-control mb-2") }} {{ form.key_description.label }} {% if
+        form.key_description.errors %} {% for error in
+        form.key_description.errors %}
+        <div class="alert alert-danger" role="alert">{{ error }}</div>
+        {% endfor %} {% endif %}
+      </div>
+      <div class="form-floating">
+        {{ form.key(placeholder="secret key", class="form-control mb-2") }} {{
+        form.key.label }} {% if form.key.errors %} {% for error in
+        form.key.errors %}
+        <div class="alert alert-danger" role="alert">{{ error }}</div>
+        {% endfor %} {% endif %}
+      </div>
+
+      <button class="w-100 btn btn-lg btn-primary" type="submit">
+        Register Key
+      </button>
+      <!-- <p class="text-center mt-3">
+        Already registered?
+        <a href="{{ url_for('accounts.login') }}">Login now</a>
+      </p> -->
+    </form>
+  </main>
+</div>
+
+{% endblock %}

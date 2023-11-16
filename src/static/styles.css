@@ -1,0 +1,135 @@
+body {
+  margin: 0;
+  
+
+}
+
+
+
+.container {
+  
+  margin-bottom: 5px;
+  
+  
+}
+
+.row{
+  margin: 2px;
+}
+
+
+.error{
+    color: red;
+    margin-bottom: 5px;
+    text-align: center;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+
+  
+
+  .user-action {
+    background: white;
+    box-shadow: 0 0 16px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    padding: 24px;
+    margin: auto;
+    position: relative;
+  }
+
+  .user-action h3{
+   
+    min-height: 70px;
+  }
+  .button-blue {
+    background-color: #1A48E3;
+    color: white;
+    padding: 16px 48px;
+    border-radius: 4px;
+    display: inline-block;
+    text-decoration: none;
+    transition: .3s;
+  }
+  
+  .button-blue:hover {
+    background-color: #0D1EC6;
+    color: white;
+  }
+
+  .btn-delete{
+    color: red;
+    padding: 4px 5px 4px 5px;
+    border-radius: 4px;
+    display: inline-block;
+    text-decoration: none;
+    background-color: transparent;
+    border-style: none;
+  }
+  .btn-delete:hover{
+    padding: 2px 3px 2px 3px;
+    background-color: lighten(red, 60%);
+    border-style: solid;
+  }
+  .container-table{
+    margin-top: 5px;
+    max-height: 180px;
+    max-width: 700px;
+    overflow-y: auto;
+  }
+  .container-below
+  {
+      max-width: 300px;
+  }
+
+  .container-reply{
+    max-width: 500px;
+    margin: auto;
+  }
+  .container-index
+  {
+      margin-top: 5px;
+  }
+
+  .container-grid
+  {     
+    display: flex;
+    flex-wrap: wrap;
+    -ms-flex-align: center;      
+    gap: 5px;
+  }
+
+  .copy-text {
+    position: relative;
+    padding: 10px;
+    background: #fff;
+    display: flex;
+    border-radius: 10px;
+    text-align: center;
+  }
+
+  .copy-text button{
+    padding: 10px;
+    height: 45px;
+    border:none;
+    outline: none;
+    border-radius: 10px;
+    cursor: pointer;
+
+  }
+  .hover-active{
+    background-color: rgba(30, 126, 209, 0.3);
+  }
+
+  .hover-inactive{
+    background-color: rgba(30, 126, 209, 0.1);
+
+  }
+ 
+
+
+
