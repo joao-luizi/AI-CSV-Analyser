@@ -53,9 +53,9 @@
         {% endfor %} {% endif %}
       </div>
       <div class="form-floating">
-        {{ form.key(placeholder="secret key", class="form-control mb-2") }} {{
-        form.key.label }} {% if form.key.errors %} {% for error in
-        form.key.errors %}
+        {{ form.key(placeholder="secret key", autocomplete="off",
+        class="form-control mb-2") }} {{ form.key.label }} {% if form.key.errors
+        %} {% for error in form.key.errors %}
         <div class="alert alert-danger" role="alert">{{ error }}</div>
         {% endfor %} {% endif %}
       </div>
