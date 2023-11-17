@@ -38,8 +38,9 @@
     </form>
   </main>
 </div>
+{% if reply %}
 <div class="container-reply">
-  <h4>Reply:</h4>
+  <h4>Response:</h4>
 </div>
 <div class="container-reply copy-text">
   <div>
@@ -49,4 +50,4 @@
     <i class="fa fa-clone"> </i>
   </button>
 </div>
-{% if reply %} {% endif %} {% endblock %}
+{% endif %} {% endblock %}
