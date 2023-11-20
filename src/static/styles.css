@@ -98,8 +98,10 @@ body {
   .container-grid
   {     
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
-    -ms-flex-align: center;      
+    -ms-flex-align: center;    
+    justify-content:left;
     gap: 5px;
   }
 
