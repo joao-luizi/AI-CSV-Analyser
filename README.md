@@ -14,7 +14,7 @@ Welcome to AIJohn, a tool for analyzing CSV files with the assistance of Artific
 
 # Configuration
 
-After cloning you will need to create a virtual enviroment for the app. Reqirements.txt has all necessary packages.
+After cloning you will need to create a virtual enviroment for the app. Requirements.txt has all necessary packages.
 
 Run pip install -r requirements.txt from the command line.
 
